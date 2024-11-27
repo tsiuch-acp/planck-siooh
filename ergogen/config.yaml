@@ -1,0 +1,48 @@
+meta:
+  # engine: 4.1.0
+  version: 0.1
+  author: tsiooh
+
+units:
+  # Proxy Spacing Variables
+  kx: u # cherry mx
+  ky: u # cherry mx
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+  #$default_width: u+2
+  #$default_height: u+2
+
+points:
+  mirror:
+    ref: matrix_inner_bottom
+    distance: 1kx
+  zones:
+    matrix: # nazwa strefy
+      columns:
+        outer:
+        pinky:
+        ring:
+        middle:
+        index:
+        inner:
+      rows:
+        bottom:
+        middle:
+        top:
+    spacerow:
+      anchor:
+        ref: matrix_outer_bottom
+        shift: [0,-1ky]
+      columns:
+        outer:
+        pinky:
+        ring:
+        middle:
+        index:
+        space:
+          key:
+            width: 2kx-1
+            shift: [0.5kx,0]
+            asym: left
+      rows:
