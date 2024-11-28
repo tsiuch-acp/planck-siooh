@@ -14,7 +14,7 @@ units:
   #$default_height: u+2
 
 points:
-  mirror:
+  mirror: &mirror
     ref: matrix_inner_bottom
     distance: 1kx
   zones:
@@ -46,3 +46,13 @@ points:
             shift: [0.5kx,0]
             asym: left
       rows:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5, ky-0.5]
+
