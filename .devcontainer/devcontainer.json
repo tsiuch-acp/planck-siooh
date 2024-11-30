@@ -19,6 +19,7 @@
 		"vscode": {
 			"extensions": [
 				"mhutchie.git-graph",
+				"johnpapa.vscode-peacock",
 				"eamodio.gitlens"
 			]
 		}
