@@ -10,8 +10,8 @@ units:
   # Padding Variables
   px: kx + 2
   py: ky + 2
-  #$default_width: u+2
-  #$default_height: u+2
+  #$default_width: u
+  #$default_height: u
 
 points:
   mirror: &mirror
@@ -42,17 +42,26 @@ points:
         index:
         space:
           key:
-            width: 2kx-1
+            width: 2kx
             shift: [0.5kx,0]
             asym: left
-      rows:
+
 outlines:
   raw:
     - what: rectangle
-      where: true
-      size: [px, py]
+      where: 
+        #ref: matrix_outer_bottom
+        ref: spacerow_outer
+      size: [12u, 4u]
+      adjust:
+        shift: [5.5u, 1.5u]
   keys:
     - what: rectangle
       where: true
       size: [kx-0.5, ky-0.5]
+  print:
+    - name: raw
+    - name: keys
+      operation: stack
+
 
