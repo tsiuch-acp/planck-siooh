@@ -5,20 +5,24 @@ meta:
 
 units:
   # Proxy Spacing Variables
-  kx: u # cherry mx
-  ky: u # cherry mx
+  kx: U # cherry mx
+  ky: U # cherry mx
   # Padding Variables
-  px: kx + 2
-  py: ky + 2
-  #$default_width: u
-  #$default_height: u
+  px: kx+2
+  py: ky+2
+  $default_width: U
+  $default_height: U
 
 points:
-  mirror: &mirror
-    ref: matrix_inner_bottom
-    distance: 1kx
+  key:
+    padding: px
+    spread: py
+  mirror:
+    ref: matrix_inner_spacerow
   zones:
-    matrix: # nazwa strefy
+    matrix:
+      #anchor:
+        #shift: [50, -100]
       columns:
         outer:
         pinky:
@@ -26,35 +30,26 @@ points:
         middle:
         index:
         inner:
+          rows:
+            spacerow:
+              width: kx+px
+              shift: [px/2,0]
+              asym: left
+            bottom:
+              shift: [-px/2, 0]
       rows:
+        spacerow:
         bottom:
         middle:
         top:
-    spacerow:
-      anchor:
-        ref: matrix_outer_bottom
-        shift: [0,-1ky]
-      columns:
-        outer:
-        pinky:
-        ring:
-        middle:
-        index:
-        space:
-          key:
-            width: 2kx
-            shift: [0.5kx,0]
-            asym: left
-
 outlines:
   raw:
     - what: rectangle
       where: 
-        #ref: matrix_outer_bottom
-        ref: spacerow_outer
-      size: [12u, 4u]
+        ref: matrix_outer_spacerow
+      size: [12px, 4px]
       adjust:
-        shift: [5.5u, 1.5u]
+        shift: [5.5px, 1.5px]
   keys:
     - what: rectangle
       where: true
@@ -63,5 +58,3 @@ outlines:
     - name: raw
     - name: keys
       operation: stack
-
-
